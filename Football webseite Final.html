@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NFL – Teams & Standings</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0b0b0b;
+    color: #f2f2f2;
+}
+
+/* STADION HEADER */
+.hero {
+    background-image: url("https://www.rnd.de/resizer/v2/EFMSBUFVDFEWBEUDK377Q4LXOE.jpg?auth=38ec0e3e79c7fe82c187fa975bb9b119122156544d5c2240f1c62492f509b2eb&quality=70&focal=1572%2C981");
+    background-size: cover;
+    background-position: center;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    background: rgba(0,0,0,0.65);
+    padding: 25px 40px;
+    border-radius: 15px;
+    font-size: 3em;
+}
+
+/* ALLGEMEIN */
+section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+h2 {
+    border-left: 6px solid #d50a0a;
+    padding-left: 15px;
+    margin-bottom: 35px;
+}
+
+/* LOGOS */
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 30px;
+}
+
+.logo-grid a {
+    background-color: #151515;
+    padding: 18px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.logo-grid a:hover {
+    transform: scale(1.12);
+}
+
+.logo-grid img {
+    width: 100%;
+    max-width: 110px;
+}
+
+/* TABELLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #151515;
+    margin-top: 30px;
+}
+
+th, td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #013369;
+}
+
+/* FOOTER */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+/* 📱 HANDY & TABLET */
+@media (max-width: 768px) {
+
+    .hero {
+        height: 260px;
+    }
+
+    .hero h1 {
+        font-size: 1.8em;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    /* Logos kleiner & schöner */
+    .logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .logo-grid img {
+        max-width: 90px;
+    }
+
+    /* Regeln untereinander statt nebeneinander */
+    .rules-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .rules-image img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    /* Tabelle scrollbar */
+    table {
+        font-size: 0.85em;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #333;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    th {
+        display: none;
+    }
+
+    td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td::before {
+        position: absolute;
+        left: 15px;
+        top: 12px;
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    td:nth-child(1)::before { content: "Team"; }
+    td:nth-child(2)::before { content: "Siege"; }
+    td:nth-child(3)::before { content: "Niederlagen"; }
+    td:nth-child(4)::before { content: "Division"; }
+
+}
+
+</style>
+
+<body>
+
+<!-- STADION BALKEN -->
+<div class="hero">
+    <h1>National Football League</h1>
+</div>
+
+<!-- AFC -->
+<section>
+<h2>AFC – American Football Conference</h2>
+<div class="logo-grid">
+<a href="https://www.baltimoreravens.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/1/16/Baltimore_Ravens_logo.svg"></a>
+<a href="https://www.bengals.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Cincinnati_Bengals_logo.svg"></a>
+<a href="https://www.browns.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/d/d9/Cleveland_Browns_logo.svg"></a>
+<a href="https://www.steelers.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Pittsburgh_Steelers_logo.svg/330px-Pittsburgh_Steelers_logo.svg.png"></a>
+
+<a href="https://www.buffalobills.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/7/77/Buffalo_Bills_logo.svg"></a>
+<a href="https://www.dolphins.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/3/37/Miami_Dolphins_logo.svg"></a>
+<a href="https://www.patriots.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/b/b9/New_England_Patriots_logo.svg"></a>
+<a href="https://www.newyorkjets.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/6/6b/New_York_Jets_logo.svg"></a>
+
+<a href="https://www.houstontexans.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/2/28/Houston_Texans_logo.svg"></a>
+<a href="https://www.colts.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Indianapolis_Colts_logo.svg/1141px-Indianapolis_Colts_logo.svg.png"></a>
+<a href="https://www.jaguars.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/7/74/Jacksonville_Jaguars_logo.svg"></a>
+<a href="https://www.tennesseetitans.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/de/thumb/3/39/Tennessee_Titans_Logo.svg/250px-Tennessee_Titans_Logo.svg.png"></a>
+
+<a href="https://www.chiefs.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/e/e1/Kansas_City_Chiefs_logo.svg"></a>
+<a href="https://www.raiders.com" target="_blank"><img src="file:///C:/Users/ested/Pictures/Las-Vegas-Raiders-Logo-NFL-Team-768x7werfw68.png"></a>
+<a href="https://www.denverbroncos.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/4/44/Denver_Broncos_logo.svg"></a>
+<a href="https://www.chargers.com" target="_blank"><img src="https://imgs.search.brave.com/XdzXd4mHDDm7FmLEWdlFn9lRAMh3UkGbQImlnbabz6I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2Vla2xvZ28u/Y29tL2xvZ28tcG5n/LzU0LzIvbG9zLWFu/Z2VsZXMtY2hhcmdl/cnMtbG9nby1wbmdf/c2Vla2xvZ28tNTQ0/ODQ3LnBuZw"></a>
+</div>
+</section>
+
+<!-- NFC -->
+<section>
+<h2>NFC – National Football Conference</h2>
+<div class="logo-grid">
+<a href="https://www.dallascowboys.com/" target="_blank"><img src="https://imgs.search.brave.com/bSDgGsdk8UqxKKOw1Z2qYxxkttBxxVecRfrb7GpsB-g/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi8xLzE1L0Rh/bGxhc19Db3dib3lz/LnN2Zy8yNTBweC1E/YWxsYXNfQ293Ym95/cy5zdmcucG5n"></a>
+<a href="https://www.giants.com" target="_blank"><img src="https://imgs.search.brave.com/HHcFjYlP12Agvpvd9l7fgfNawr7IUGTgeOlRvxWFxkU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi82LzYwL05l/d19Zb3JrX0dpYW50/c19sb2dvLnN2Zy8y/NTBweC1OZXdfWW9y/a19HaWFudHNfbG9n/by5zdmcucG5n"></a>
+<a href="https://www.eagles.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/8/8e/Philadelphia_Eagles_logo.svg"></a>
+<a href="https://www.commanders.com" target="_blank"><img src="https://imgs.search.brave.com/CmontYVsAnkh6vjGh2fKvDcyCFDeHhhVHdq3iqjv9Xk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi8wLzBjL1dh/c2hpbmd0b25fQ29t/bWFuZGVyc19sb2dv/LnN2Zy8yNTBweC1X/YXNoaW5ndG9uX0Nv/bW1hbmRlcnNfbG9n/by5zdmcucG5n"></a>
+
+<a href="https://www.packers.com" target="_blank"><img src="https://imgs.search.brave.com/TyH0_f9weAToWQ6BDqRSOiu5GdX1KC2vdk6kXXCiw6k/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi81LzUwL0dy/ZWVuX0JheV9QYWNr/ZXJzX2xvZ28uc3Zn/LzI1MHB4LUdyZWVu/X0JheV9QYWNrZXJz/X2xvZ28uc3ZnLnBu/Zw"></a>
+<a href="https://www.vikings.com" target="_blank"><img src="https://imgs.search.brave.com/CqCV2OBYHmDqn0WXTPbOmOfxIw8mbZ1IosC28jl9lSg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pY29u/bG9nb3ZlY3Rvci5j/b20vdXBsb2Fkcy9p/bWFnZXMvMjAyNS8w/MS9sZy02NzljMzg5/ZDcyZDZhLU1pbm5l/c290YS1WaWtpbmdz/LndlYnA"></a>
+<a href="https://www.chicagobears.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Chicago_Bears_logo.svg/250px-Chicago_Bears_logo.svg.png"></a>
+<a href="https://www.detroitlions.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/7/71/Detroit_Lions_logo.svg"></a>
+
+<a href="https://www.49ers.com" target="_blank"><img src="https://imgs.search.brave.com/jZ-6nqyWSoxgDoR10IJh-afjauXzT1c34DYEC8rsnF0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi8zLzNhL1Nh/bl9GcmFuY2lzY29f/NDllcnNfbG9nby5z/dmcvMjUwcHgtU2Fu/X0ZyYW5jaXNjb180/OWVyc19sb2dvLnN2/Zy5wbmc"></a>
+<a href="https://www.seahawks.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/8/8e/Seattle_Seahawks_logo.svg"></a>
+<a href="https://www.therams.com" target="_blank"><img src="https://imgs.search.brave.com/mqW2r-s2yKCBqsFsnOQ8wenwMCDSezZ_8NAPQc9kz5I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZnJlZXBuZ2xvZ29z/LmNvbS91cGxvYWRz/L3JhbXMtbG9nby1w/bmcvbG9zLWFuZ2Vs/ZXMtcmFtcy1sb2dv/LXBuZy0yLnBuZw"></a>
+<a href="https://www.azcardinals.com" target="_blank"><img src="https://imgs.search.brave.com/GEq7yviNimFzojE-KeweZbtShPiFlQ_mTJCCXlEXRqY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuY2RubG9nby5j/b20vbG9nb3MvYS85/My9hcml6b25hLWNh/cmRpbmFscy10aHVt/Yi5wbmc"></a>
+
+<a href="https://www.panthers.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/1/1c/Carolina_Panthers_logo.svg"></a>
+<a href="https://www.atlantafalcons.com" target="_blank"><img src="https://imgs.search.brave.com/f54MRFLKKTHFrsIOxvRuzT9PA9I9OwFlx52gaW-5IAU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/cy13b3JsZC5uZXQv/d3AtY29udGVudC91/cGxvYWRzLzIwMjAv/MDUvQXRsYW50YS1G/YWxjb25zLWxvZ28t/NzAweDM5NC5wbmc"></a>
+<a href="https://www.buccaneers.com" target="_blank"><img src="https://imgs.search.brave.com/GtawJ4LtiG9Rn8vryYvGAox60hPpPwqybJ2q8CWhK-U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2Vla2xvZ28u/Y29tL2xvZ28tcG5n/LzUwLzIvdGFtcGEt/YmF5LWJ1Y2NhbmVl/cnMtbG9nby1wbmdf/c2Vla2xvZ28tNTA4/MTg4LnBuZw"></a>
+<a href="https://www.neworleanssaints.com" target="_blank"><img src="https://imgs.search.brave.com/9vyHQAQ_PJcK0pc2bOOnK3YxW8_W25kfo641k74D1c8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi81LzUwL05l/d19PcmxlYW5zX1Nh/aW50c19sb2dvLnN2/Zy8yNTBweC1OZXdf/T3JsZWFuc19TYWlu/dHNfbG9nby5zdmcu/cG5n"></a>
+</div>
+</section>
+
+<section>
+<h2>Aktuelle NFL Standings (Live)</h2>
+
+<table id="liveStandings">
+<tr>
+<th>Team</th>
+<th>Siege</th>
+<th>Niederlagen</th>
+<th>Division</th>
+</tr>
+</table>
+</section>
+
+<section id="rules">
+<h2>Regeln des American Football</h2>
+
+<div class="rules-layout">
+
+<div class="rules-text">
+<p>
+American Football ist ein taktischer und körperbetonter Mannschaftssport,
+der vor allem in der <strong>National Football League (NFL)</strong> gespielt wird.
+Zwei Teams mit jeweils <strong>11 Spielern</strong> treten gegeneinander an,
+um möglichst viele Punkte zu erzielen.
+</p>
+
+<h3>📐 Spielfeld</h3>
+<p>
+Das Spielfeld ist insgesamt <strong>120 Yards</strong> lang.
+Davon entfallen <strong>100 Yards</strong> auf das eigentliche Feld
+und jeweils <strong>10 Yards</strong> auf die Endzonen.
+Weiße Linien markieren alle 10 Yards zur Orientierung.
+</p>
+
+<h3>🔄 Spielprinzip & Downs</h3>
+<p>
+Das angreifende Team hat <strong>4 Versuche (Downs)</strong>,
+um mindestens <strong>10 Yards</strong> Raumgewinn zu erzielen.
+Gelingt dies, erhält es neue 4 Downs.
+Andernfalls wechselt der Ballbesitz.
+</p>
+
+<h3>🏈 Angriff & Verteidigung</h3>
+<p>
+Die Offense versucht durch Lauf- oder Passspiel voranzukommen,
+während die Defense versucht, den Gegner zu stoppen,
+Pässe abzufangen oder den Ballträger zu tackeln.
+</p>
+
+<h3>🎯 Punkte</h3>
+<ul>
+<li><strong>Touchdown:</strong> 6 Punkte</li>
+<li><strong>Extra Point:</strong> 1 Punkt</li>
+<li><strong>Two-Point Conversion:</strong> 2 Punkte</li>
+<li><strong>Field Goal:</strong> 3 Punkte</li>
+<li><strong>Safety:</strong> 2 Punkte</li>
+</ul>
+
+<h3>⏱ Spielzeit</h3>
+<p>
+Ein Spiel besteht aus <strong>4 Vierteln à 15 Minuten</strong>.
+Zwischen dem zweiten und dritten Viertel gibt es eine Halbzeitpause.
+Durch Unterbrechungen kann ein Spiel deutlich länger dauern.
+</p>
+
+<p>
+American Football verbindet Strategie, Teamwork und Athletik
+und zählt zu den beliebtesten Sportarten weltweit.
+</p>
+</div>
+
+<div class="rules-image">
+<img src="https://static.vecteezy.com/ti/gratis-vektor/t2/1518397-american-football-feld-vektor.jpg">
+</div>
+
+</div>
+</section>
+
+
+<footer>
+© 2026 NFL Website | Schulprojekt
+</footer>
+
+<script>
+fetch("https://site.api.espn.com/apis/v2/sports/football/nfl/standings")
+.then(response => response.json())
+.then(data => {
+    const table = document.getElementById("liveStandings");
+    data.children[0].standings.entries.forEach(team => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${team.team.displayName}</td>
+            <td>${team.stats.find(s => s.name === "wins").value}</td>
+            <td>${team.stats.find(s => s.name === "losses").value}</td>
+            <td>${team.team.abbreviation}</td>
+        `;
+        table.appendChild(row);
+    });
+});
+</script>
+
+</body>
+</html>
