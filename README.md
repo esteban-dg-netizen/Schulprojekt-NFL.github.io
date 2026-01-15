@@ -1,2 +1,2 @@
-# Esteban.github.io
+# Schulprojekt-NFL
 NFL Übersicht. Tabellen, Regeln und mehr!
